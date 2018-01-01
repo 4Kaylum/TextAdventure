@@ -24,15 +24,16 @@ public class TextAdventure {
 			System.out.println("What game do you want to run?");
 			String gameName = in.nextLine();
 			load(gameName);
+			Item.path = TextAdventure.gamePath;
 			break;
 		}
 		
 		// Determine the next thing the user says
-		Item item = new Item("test.json");
+		Item testItem = new Item(gamePath + "test.item");
 		while (true) {
 			String line = in.nextLine();
 			if (line.equals("test item")) {
-				System.out.println("You are testing " + item.mention() + ".");
+				System.out.println("You are testing " + testItem.mention() + ".");
 			} else if (line.equals("exit")) {
 				System.out.println("Exiting program.");
 				break;
@@ -43,6 +44,6 @@ public class TextAdventure {
 	
 	public static void load(String gameName) {
 		File file = new File("./" + gameName);
-		gamePath = file.getAbsolutePath();
+		TextAdventure.gamePath = file.getAbsolutePath() + "/";
 	}
 }
