@@ -1,0 +1,640 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"min",
+				"min_salary\tstatement"
+			],
+			[
+				"max",
+				"max_salary\tstatement"
+			],
+			[
+				"set",
+				"set_author\tfunction"
+			],
+			[
+				"add",
+				"add_blank_field\tfunction"
+			],
+			[
+				"cusom",
+				"CustomEmbed\tclass"
+			],
+			[
+				"custom",
+				"custom_embed\tmodule"
+			],
+			[
+				"gul",
+				"guild_id"
+			],
+			[
+				"call",
+				"callable\tfunction"
+			],
+			[
+				"format",
+				"format_exc"
+			],
+			[
+				"invo",
+				"invoked_subcommand\tstatement"
+			],
+			[
+				"poke",
+				"pokedex_sorted\tstatement"
+			],
+			[
+				"ev",
+				"evolves_into\tstatement"
+			],
+			[
+				"evolution",
+				"evolution_data"
+			],
+			[
+				"set_",
+				"set_thumbnail\tfunction"
+			],
+			[
+				"cache",
+				"cached_pokemon"
+			],
+			[
+				"trace",
+				"traceback\tmodule"
+			],
+			[
+				"word",
+				"word_to_define"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"fig",
+				"figcaption\tTag"
+			],
+			[
+				"cap",
+				"captcha\tstatement"
+			],
+			[
+				"attach",
+				"attachments"
+			],
+			[
+				"to",
+				"to_update"
+			],
+			[
+				"sut",
+				"student"
+			],
+			[
+				"Missin",
+				"MissingPermissions\tclass"
+			],
+			[
+				"dis",
+				"discord\tmodule"
+			],
+			[
+				"print",
+				"print_tuple\tfunction"
+			],
+			[
+				"user",
+				"user_input\tstatement"
+			],
+			[
+				"sea",
+				"search_by_job_name\tfunction"
+			],
+			[
+				"guild",
+				"guild_id"
+			],
+			[
+				"guil",
+				"guild_id"
+			],
+			[
+				"T",
+				"TextChannel\tclass"
+			],
+			[
+				"run",
+				"run_custom\tfunction"
+			],
+			[
+				"exten",
+				"extensions"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/main/java/TextAdventure/Item.java",
+			"settings":
+			{
+				"buffer_size": 561,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/main/java/TextAdventure/TextAdventure.java",
+			"settings":
+			{
+				"buffer_size": 371,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Java/JavaC.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python Venv.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/Python Venv.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "run",
+		"selected_items":
+		[
+			[
+				"run",
+				"SublimeREPL: Python - virtualenv"
+			],
+			[
+				"venv",
+				"Build With: Python Venv"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"repl",
+				"SublimeREPL: Python"
+			],
+			[
+				"build",
+				"Build With: Python Venv"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"python",
+				"Build With: python3"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"repl python",
+				"SublimeREPL: Python"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"spa",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure",
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure/src",
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure/src/main",
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure/src/main/java",
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure/src/main/java/TextAdventure"
+	],
+	"file_history":
+	[
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure/src/Item.java",
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure/pom.xml",
+		"/C/Users/coolu/Dropbox/CodeMk2/Java/TextAdventure/TextAdventure.sublime-project",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/project.sublime-project",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/__main__.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/models/sizer.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/models/window.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/models/block.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/models/invoker.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/OverTells Public Bot2/Configuration/Tokens.json",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/OverTells Public Bot2/Configuration/Tokens - Copy.json",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/OverTells Public Bot2/Configuration/ServerData2.json",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/OverTells Public Bot2/Configuration/ServerData.json",
+		"/E/Steam/steamapps/common/Star Wars Battlefront II/GameData/chat1.txt",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/source/code-reference.rst",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/make.bat",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/models/spell.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/source/conf.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Invoker/.gitignore",
+		"/C/Users/coolu/Dropbox/University/CE153/Assignment 1/tour management agency log.txt",
+		"/C/Users/coolu/Dropbox/University/CE153/Assignment 1/tour management agency script.txt",
+		"/C/Users/coolu/Dropbox/University/CE153/Assignment 1/doit.cmd",
+		"/C/Users/coolu/Dropbox/University/CE153/Assignment 1/tour management agency logical.png",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex1/Ex2-1 12-12-17.py",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/Ex2-2 12-12-17.py",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/countries.txt",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/Ex2-2 04-12-17.py",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/country words.txt",
+		"/C/Users/coolu/AppData/Local/Temp/wordstofind.txt",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/words.txt",
+		"/C/Users/coolu/AppData/Roaming/Sublime Text 3/Packages/User/Python Venv.sublime-build",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex1/emps.txt",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/grid.txt",
+		"/C/Users/coolu/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/grid2.txt",
+		"/C/Users/coolu/AppData/Roaming/Sublime Text 3/Packages/User/python3.sublime-build",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/requirements.txt",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Owner_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Utils/custom_bot.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Leave_Event.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Join_Event.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/_Main.py",
+		"/B/Libraries/Dropbox/AAAAAAAAAAAAA.py",
+		"/B/Libraries/Dropbox/My Porn/Man fucks Cow.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Config/Bot.json.example",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Config/Bot.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Invoker/Old/Invoker Game 2.0.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Utils/custom_repl.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/docs/database.sql",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/docs/discordbots.org.html",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Custom_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Admin_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Error_Event.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/docs/discord.bots.pw.html",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Meta_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Internet_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/General_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Steam_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Utils/steam_library.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Bible_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Config/OLD_CONFIG.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Config/RunBot.sh",
+		"/C/Users/coolu/AppData/Local/Temp/ex2-new3.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/RunBot.sh",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/ServerConfigs/173775248309747712.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/ServerConfigs/303891366973276160.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/ServerConfigs/Default.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/ServerConfigs/110373943822540800.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/ServerConfigs/218396969641443329.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/ServerConfigs/218784749907476480.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/ServerConfigs/140847179043569664.json",
+		"/C/Users/coolu/AppData/Local/Temp/fz3temp-2/access.log",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Utils/youtube_downloader.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/_Music_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Animal_Images.py",
+		"/C/Users/coolu/Desktop/Nickyboi/emps.txt",
+		"/C/Users/coolu/Desktop/Nickyboi/Invoker Invoker Game 1.2.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Utils/custom_embed.py",
+		"/C/Users/coolu/AppData/Local/Temp/emps.txt",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Utils/database.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/docs/database.sql",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Join_Event.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Leave_Event.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Admin_Commands.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Utils/custom_bot.py",
+		"/C/Users/coolu/Desktop/script.txt",
+		"/C/Users/coolu/AppData/Local/Temp/CE161_PT1_FBack.txt",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Owner_Commands.py",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Config/Bot.json",
+		"/C/Users/coolu/Dropbox/CodeMk2/Python/Discord/Spar.cli/Config/OLD_CONFIG.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/.gitignore",
+		"/B/Libraries/Dropbox/University/Scripting/Python/CE151/Assignment 2/Ex2/Assignment2 21-11-17.py",
+		"/B/Libraries/Dropbox/University/Scripting/Python/CE151/Assignment 2/userdata.txt",
+		"/B/Libraries/Dropbox/University/Scripting/Python/CE151/Assignment 2/Assignment2 20-11-17.py",
+		"/C/Users/coolu/AppData/Local/Temp/logical-design-script.txt",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/Admin_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Config/settings.sublime-project",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/settings.sublime-project",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/README.md",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/OverTells Public Bot2/Configuration/Tokens.json",
+		"/C/Users/coolu/Desktop/Circle.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/Cogs/Animals.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/General_Commands.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Spar.cli/TokenSheet.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/General_Commands (Callum B-'s conflicted copy 2017-11-16).py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/Error_Events.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/Join_Events.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Main.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Config/Bot.json",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Config/Member_Join.txt",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Config/Bot.json.example",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/test.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/.gitignore",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/Utils/FileHandling.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Config/Member_Join.txt.example",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/run.bat",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/Vote.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/CustomBot.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/Utils/JsonHandling.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/Sanctuary/Sanctuary/Cogs/Utils/CustomBot.py",
+		"/B/Libraries/Dropbox/CodeMk2/Python/Discord/OverTells Public Bot2/Cogs/OwnerOnly.py",
+		"/B/Libraries/Dropbox/CodeMk2/Sublime3 License.txt"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/main/java/TextAdventure/Item.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 561,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/main/java/TextAdventure/TextAdventure.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								348,
+								348
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 229.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 224.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "TextAdventure.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 750.0,
+		"last_filter": "invok",
+		"selected_items":
+		[
+			[
+				"invok",
+				"C:\\Users\\coolu\\Dropbox\\CodeMk2\\Python\\Invoker\\project.sublime-project"
+			]
+		],
+		"width": 570.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 215.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
