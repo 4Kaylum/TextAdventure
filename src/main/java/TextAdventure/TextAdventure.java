@@ -39,7 +39,7 @@ public class TextAdventure {
 				break;
 			} else {
 				Parser p = Parser.parse(line);
-				System.out.println(p.toString());
+				TextAdventure.game.run(p);
 			}
 		}
 		in.close();

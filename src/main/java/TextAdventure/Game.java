@@ -1,6 +1,5 @@
 package TextAdventure;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,6 +31,18 @@ public class Game {
 		// Work out where we're starting
 		String locationName = this.settings.get("starting_location").asString();
 		this.location = new Location(locationName);
+	}
+
+	public void run(Parser p) {
+		switch (p.action) {
+			case ROOM_EXAMINE:
+				String x = this.getLocation().lookAround();
+				System.out.println(x);
+				break;
+			default: 
+				System.out.println("That action is invalid.");
+				break;
+		}
 	}
 	
 	public Location getLocation() {

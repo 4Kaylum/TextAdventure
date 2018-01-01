@@ -19,6 +19,10 @@ public class Parser {
 		this.action = x;
 	}
 
+	public Parser(Action x) {
+		this.action = x;
+	}
+
 	public String toString() {
 		return this.action + " a=\"" + this.a + "\" b=\"" + this.b + "\"";
 	}
@@ -31,7 +35,7 @@ public class Parser {
 	 * @return The Parser object of the interpreted string
 	 * @throws Exception 
 	**/
-	public static Parser parse(String toParse) throws Exception {
+	public static Parser parse(String toParse) {
 
 		// Determine if they're moving
 		String regex = "(go|walk|move)( to)? (.*)?";
@@ -41,14 +45,22 @@ public class Parser {
 			return new Parser(Action.MOVE, m.group(3));
 		}
 
+		// Determine if they're looking at the room
+		regex = "(look|examine|x) (room|around)";
+		r = Pattern.compile(regex);
+		m = r.matcher(toParse);
+		if (m.find()) {
+			return new Parser(Action.ROOM_EXAMINE);
+		}
+
 		// Determine if they're looking at something
 		regex = "(look|examine|x)( at)? (.*)?";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
-			return new Parser(Action.ITEM_EXAMINE, m.group(2));
+			return new Parser(Action.ITEM_EXAMINE, m.group(3));
 		}
 
-		throw new Exception();
+		return new Parser(Action.INVALID);
 	}
 }

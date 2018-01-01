@@ -41,11 +41,27 @@ public class Location {
 		}
 	}
 	
-	public String lookAround() {
+	public String lookAround(boolean newLine) {
 		String description = raw.get("description").asString();
 		if (!this.items.isEmpty()) {
-			description = description + "\nTHERE ARE ALSO ITEMS";
+			description = description + "\nItems: ";
+			int counter = 0;
+			for (Item i : this.items) {
+				counter++;
+				description += i.mention();
+				if (counter == this.items.size() - 1 && this.items.size() != 0) {
+					description += ", and ";
+				} else if (counter < this.items.size()) {
+					description += ", ";
+				} else {
+					description += ".";
+				}
+			}
 		}
-		return description;
+		if (newLine) { return "\n" + description; } return description;
+	}
+	
+	public String lookAround() {
+		return this.lookAround(true);
 	}
 }
