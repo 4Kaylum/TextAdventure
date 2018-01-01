@@ -12,7 +12,7 @@ import com.eclipsesource.json.JsonValue;
 
 public class Game {
 	private static String path;
-	private List<Item> inventory;
+	private List<Item> inventory = new ArrayList<Item>();
 	private Location location;
 	private JsonValue raw;
 	private JsonObject settings;
@@ -20,6 +20,8 @@ public class Game {
 	public Game(String path) throws IOException {
 		
 		Game.path = path;
+		Item.path = path;
+		Location.path = path;
 		
 		// Read the file
 		FileReader file = new FileReader(Game.path + ".settings");
@@ -29,7 +31,7 @@ public class Game {
 		
 		// Work out where we're starting
 		String locationName = this.settings.get("starting_location").asString();
-		this.location = new Location(Game.path + locationName);
+		this.location = new Location(locationName);
 	}
 	
 	public Location getLocation() {

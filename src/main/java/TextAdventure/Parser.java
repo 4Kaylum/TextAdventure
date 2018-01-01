@@ -42,11 +42,11 @@ public class Parser {
 		}
 
 		// Determine if they're looking at something
-		regex = "(look at|examine|x) (.*)?";
+		regex = "(look|examine|x)( at)? (.*)?";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
-			return new Parser(Action.MOVE, m.group(2));
+			return new Parser(Action.ITEM_EXAMINE, m.group(2));
 		}
 
 		throw new Exception();

@@ -19,6 +19,7 @@ public class TextAdventure {
 		// Determine the game path
 		while (true) {
 			System.out.println("What game do you want to run?");
+			System.out.print("  > "); System.out.flush();
 			String gameName = in.nextLine();
 			TextAdventure.load(gameName);
 			break;
@@ -31,6 +32,7 @@ public class TextAdventure {
 		
 		// Determine the next thing the user says
 		while (true) {
+			System.out.print("  > "); System.out.flush();
 			String line = in.nextLine();
 			if (line.equals("exit")) {
 				System.out.println("Exiting program.");

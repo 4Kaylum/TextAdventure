@@ -3,5 +3,7 @@ package TextAdventure;
 public enum Action {
 	USE,
 	MOVE,
-	LOOK,
+	ITEM_EXAMINE,
+	ROOM_EXAMINE,
+	INVALID,
 };	

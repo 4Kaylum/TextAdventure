@@ -1,6 +1,8 @@
 {
 	"name": "start",
 	"description": "It was a place, like any other.",
-	"items": [],
+	"items": [
+		"test"
+	],
 	"leading_to": {}
 }
