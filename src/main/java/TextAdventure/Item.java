@@ -2,11 +2,12 @@ package TextAdventure;
 import java.io.FileReader;
 import java.io.IOException;
 import com.eclipsesource.json.*;
-
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.Ansi.*;
 
 public class Item {
-	public final String name;
-	public final String id;
+	public String name;
+	public String id;
 	private JsonValue rawJson;
 	private JsonObject raw;
 
@@ -24,8 +25,9 @@ public class Item {
 		// Get its ID
 		id = raw.get("id").asString();
 	}
-
 	
-
+	public String mention() {
+		return Ansi.ansi().bg(Color.RED).fg(Color.WHITE).a(this.name).reset().toString();
+	}
 
 }
