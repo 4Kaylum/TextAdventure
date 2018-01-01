@@ -4,5 +4,4 @@ public enum Action {
 	USE,
 	MOVE,
 	LOOK,
-	EXIT,
 };	

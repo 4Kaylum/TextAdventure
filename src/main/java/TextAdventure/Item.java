@@ -14,7 +14,7 @@ public class Item {
 	public Item(String filename) throws IOException {
 		 
 		// Read the file
-		FileReader file = new FileReader(filename);
+		FileReader file = new FileReader(filename + ".item");
 		rawJson = Json.parse(file);
 		file.close();
 		raw = rawJson.asObject();

@@ -28,7 +28,7 @@ public class Game {
 		this.settings = raw.asObject();
 		
 		// Work out where we're starting
-		String locationName = this.settings.get("Start").asString();
+		String locationName = this.settings.get("starting_location").asString();
 		this.location = new Location(Game.path + locationName);
 	}
 	
@@ -39,10 +39,6 @@ public class Game {
 	public Location setLocation(Location newLocation) {
 		this.location = newLocation;
 		return this.getLocation();
-	}
-	
-	public String getLocationDescription() {
-		return this.location.getDescription();
 	}
 	
 	public void getItem(String itemId) throws IOException {
