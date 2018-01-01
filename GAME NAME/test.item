@@ -1,4 +1,5 @@
 {
-	"name": "Test",
-	"id": "Test_Item"
+	"display_name": "test",
+	"aliases": "(test|post)",
+	"pickup_text": "You pick up the {{name}} and slip it into your abstract thought."
 }

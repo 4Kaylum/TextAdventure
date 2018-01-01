@@ -4,6 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
@@ -62,6 +64,23 @@ public class Location {
 	}
 	
 	public String lookAround() {
-		return this.lookAround(true);
+		return this.lookAround(false);
+	}
+
+	/**
+	 * Gets an item from this room's items via a regex search
+	 * @param r The name being searched for in the item's regex
+	**/
+	public Item popItem(String userInput) {
+		for (Item item : this.items) {
+			String aliases = item.getAliases();
+			Pattern p = Pattern.compile(aliases);
+			Matcher m = p.matcher(userInput);
+			if (m.find()) {
+				this.items.remove(item);
+				return item;
+			}
+		}
+		return Item.invalid();
 	}
 }

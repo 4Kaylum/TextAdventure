@@ -7,7 +7,7 @@ import org.fusesource.jansi.Ansi.*;
 
 public class Item {
 	public static String path;
-	public String name;
+	public String display_name;
 	public String id;
 	private JsonValue rawJson;
 	private JsonObject raw;
@@ -16,19 +16,33 @@ public class Item {
 		 
 		// Read the file
 		FileReader file = new FileReader(Item.path + filename + ".item");
-		rawJson = Json.parse(file);
+		this.rawJson = Json.parse(file);
 		file.close();
-		raw = rawJson.asObject();
+		this.raw = rawJson.asObject();
 		
 		// Get the name from it
-		name = raw.get("name").asString();
+		this.display_name = raw.get("display_name").asString();
 		
 		// Get its ID
-		id = raw.get("id").asString();
+		this.id = filename;
 	}
 	
+	public Item() {}
+	
 	public String mention() {
-		return Ansi.ansi().bg(Color.RED).fg(Color.WHITE).a(this.name).reset().toString();
+		return Ansi.ansi().bg(Color.RED).fg(Color.WHITE).a(this.display_name).reset().toString();
+	}
+	
+	public String getAliases() {
+		return this.raw.get("aliases").asString();
+	}
+
+	public static Item invalid() {
+		return new Item();
+	}
+
+	public String getPickupText() {
+		return this.raw.get("pickup_text").asString().replaceAll("\\{\\{name\\}\\}", this.mention());
 	}
 
 }

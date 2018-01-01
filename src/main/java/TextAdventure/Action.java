@@ -5,5 +5,7 @@ public enum Action {
 	MOVE,
 	ITEM_EXAMINE,
 	ROOM_EXAMINE,
+	GET_ITEM,
+	CLEAR_CONSOLE,
 	INVALID,
 };	

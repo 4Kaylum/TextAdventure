@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.fusesource.jansi.Ansi;
+
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
@@ -35,12 +37,29 @@ public class Game {
 
 	public void run(Parser p) {
 		switch (p.action) {
-			case ROOM_EXAMINE:
-				String x = this.getLocation().lookAround();
-				System.out.println(x);
+			case CLEAR_CONSOLE:
+				Ansi.ansi().eraseScreen();
 				break;
+		
+			case ROOM_EXAMINE:
+				String roomDescription = this.getLocation().lookAround();
+				System.out.println(roomDescription);
+				break;
+
+			case GET_ITEM:
+				Item item = this.getLocation().popItem(p.a);
+				if (item.display_name == null) {
+					System.out.println("That item doesn't seem to exist.");
+				} else {
+					this.inventory.add(item);
+					String itemDescription = item.getPickupText();
+					System.out.println(itemDescription);					
+				}
+				break;
+				
 			default: 
-				System.out.println("That action is invalid.");
+				System.out.print("That action is invalid. ");
+				System.out.println(p);
 				break;
 		}
 	}

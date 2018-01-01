@@ -61,6 +61,23 @@ public class Parser {
 			return new Parser(Action.ITEM_EXAMINE, m.group(3));
 		}
 
+		// See if they want to clear the console
+		regex = "(clear|cls)";
+		r = Pattern.compile(regex);
+		m = r.matcher(toParse);
+		if (m.find()) {
+			return new Parser(Action.CLEAR_CONSOLE);
+		}
+
+		// Determine if they're trying to pick up an item
+		regex = "(get|pick)( up)? (.*)?";
+		r = Pattern.compile(regex);
+		m = r.matcher(toParse);
+		if (m.find()) {
+			return new Parser(Action.GET_ITEM, m.group(3));
+		}
+
+		// Invalid option
 		return new Parser(Action.INVALID);
 	}
 }
