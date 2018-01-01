@@ -8,9 +8,6 @@ import org.fusesource.jansi.AnsiConsole;
 public class TextAdventure {
 	
 	public static String gamePath;
-	public static Location currentLocation;
-	public static boolean firstRun;  // Whether or not it's the first time you enter a room
-	public static Item[] inventory;
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -23,18 +20,15 @@ public class TextAdventure {
 		while (true) {
 			System.out.println("What game do you want to run?");
 			String gameName = in.nextLine();
-			load(gameName);
-			Item.path = TextAdventure.gamePath;
+			TextAdventure.load(gameName);
 			break;
 		}
 		
 		// Determine the next thing the user says
-		Item testItem = new Item(gamePath + "test.item");
+		Game game = new Game(TextAdventure.gamePath);
 		while (true) {
 			String line = in.nextLine();
-			if (line.equals("test item")) {
-				System.out.println("You are testing " + testItem.mention() + ".");
-			} else if (line.equals("exit")) {
+			if (line.equals("exit")) {
 				System.out.println("Exiting program.");
 				break;
 			}

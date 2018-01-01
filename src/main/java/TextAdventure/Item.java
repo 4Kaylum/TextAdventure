@@ -6,7 +6,6 @@ import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.Ansi.*;
 
 public class Item {
-	public static String path;
 	public String name;
 	public String id;
 	private JsonValue rawJson;
@@ -15,7 +14,7 @@ public class Item {
 	public Item(String filename) throws IOException {
 		 
 		// Read the file
-		FileReader file = new FileReader(Item.path + filename);
+		FileReader file = new FileReader(filename);
 		rawJson = Json.parse(file);
 		file.close();
 		raw = rawJson.asObject();

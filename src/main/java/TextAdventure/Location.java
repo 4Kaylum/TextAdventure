@@ -7,7 +7,6 @@ import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
 
 public class Location {
-	public static String path;
 	public String name;
 	public String id;
 	private JsonValue rawJson;
@@ -17,7 +16,7 @@ public class Location {
 	public Location(String filename) throws IOException {
 		
 		// Read the file
-		FileReader file = new FileReader(Location.path + filename);
+		FileReader file = new FileReader(filename);
 		rawJson = Json.parse(file);
 		file.close();
 		raw = rawJson.asObject();
