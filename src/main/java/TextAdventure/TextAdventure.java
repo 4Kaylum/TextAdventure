@@ -24,13 +24,17 @@ public class TextAdventure {
 		while (true) {
 			System.out.println("What game do you want to run?");
 			String gameName = input();
-			TextAdventure.load(gameName);
-			break;
+			try {
+				TextAdventure.load(gameName);
+				TextAdventure.game = new Game(TextAdventure.gamePath);
+				break;
+			} catch (Exception e) {
+				System.out.println("That game could not be loaded.");
+			}
 		}
 
 		// Create a new game object
 		Ansi.ansi().eraseScreen();
-		TextAdventure.game = new Game(TextAdventure.gamePath);
 		String d = TextAdventure.game.getLocation().lookAround();
 		System.out.println(d);
 		
