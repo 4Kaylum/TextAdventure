@@ -6,8 +6,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.Ansi.Color;
 
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
@@ -17,12 +21,11 @@ import com.eclipsesource.json.JsonValue;
 
 public class Location {
 	public static String path;
-	public String name;
 	public String id;
 	private JsonValue rawJson;
 	private JsonObject raw;	
 	private List<Item> items = new ArrayList<Item>();
-	private Map<String, Pattern> leadingTo = new HashMap<String, Pattern>();
+	private Map<String, Entry<Pattern, String>> leadingTo = new HashMap<String, Entry<Pattern, String>>();
 	
 	public Location(String filename) throws IOException {
 		
@@ -34,9 +37,6 @@ public class Location {
 		this.rawJson = Json.parse(file);
 		file.close();
 		this.raw = rawJson.asObject();
-		
-		// Get the name from it
-		this.name = raw.get("name").asString();
 		
 		// Get the items
 		JsonArray items = raw.get("items").asArray();
@@ -50,10 +50,11 @@ public class Location {
 		JsonObject leads = raw.get("leading_to").asObject();
 		for (Member leadObject : leads) {
 			JsonObject j = leadObject.getValue().asObject(); 
-			this.leadingTo.put(
-				j.get("display_name").asString(), 
-				Pattern.compile(j.get("player_string").asString())
+			Entry<Pattern, String> l = new SimpleEntry<Pattern, String> (
+				Pattern.compile(j.get("player_string").asString()),
+				j.get("display_name").asString()
 			);
+			this.leadingTo.put(leadObject.getName(), l);
 		}
 	}
 	
@@ -77,6 +78,22 @@ public class Location {
 			for (Item i : this.items) {
 				counter++;
 				description += i.mention();
+				if (counter == this.items.size() - 1 && this.items.size() != 0) {
+					description += ", and ";
+				} else if (counter < this.items.size()) {
+					description += ", ";
+				} else {
+					description += ".";
+				}
+			}
+		}
+		if (this.leadingTo.size() > 0) {
+			description = description + "\nLeading to: ";
+			int counter = 0;
+			for (Entry<String, Entry<Pattern, String>> entry : this.leadingTo.entrySet()) {
+				counter++;
+				String display = entry.getValue().getValue();
+				description += Ansi.ansi().bg(Color.WHITE).fg(Color.MAGENTA).a(display).reset();
 				if (counter == this.items.size() - 1 && this.items.size() != 0) {
 					description += ", and ";
 				} else if (counter < this.items.size()) {
@@ -111,8 +128,8 @@ public class Location {
 	}
 
 	public String checkMovement(String userInput) {
-		for (Map.Entry<String, Pattern> entry : this.leadingTo.entrySet()) {
-			Matcher m = entry.getValue().matcher(userInput);
+		for (Entry<String, Entry<Pattern, String>> entry : this.leadingTo.entrySet()) {
+			Matcher m = entry.getValue().getKey().matcher(userInput);
 			if (m.find()) { return entry.getKey(); }
 		}
 		return null;
