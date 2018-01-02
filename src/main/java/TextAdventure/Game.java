@@ -72,12 +72,11 @@ public class Game {
 			case MOVE:
 				// Move the player to another room
 				Location current = this.getLocation();
-				Map<String, String> moves = current.getMovement();
-				String newLocationId = moves.get(p.a);
-				if (newLocationId == null) {
+				String newLocation = current.checkMovement(p.a);
+				if (newLocation == null) {
 					System.out.println("That location is invalid.");
 				} else {
-					this.setLocation(newLocationId);
+					this.setLocation(newLocation);
 				}
 				break;
 

@@ -33,12 +33,12 @@ public class Parser {
 	 *
 	 * @param toParse The string from the user that is to be interpreted
 	 * @return The Parser object of the interpreted string
-	 * @throws Exception 
 	**/
 	public static Parser parse(String toParse) {
+		toParse = toParse.trim();
 
 		// Determine if they're moving
-		String regex = "(go|walk|move)( to)? (.*)?";
+		String regex = "^(go|walk|move)( to)? (.*)?$";
 		Pattern r = Pattern.compile(regex);
 		Matcher m = r.matcher(toParse);
 		if (m.find()) {
@@ -46,7 +46,7 @@ public class Parser {
 		}
 
 		// Determine if they're looking at the room
-		regex = "(look|examine|x) (room|around)";
+		regex = "^(look|examine|x) (room|around)$";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
@@ -54,7 +54,7 @@ public class Parser {
 		}
 
 		// Determine if they're looking at something
-		regex = "(look|examine|x)( at)? (.*)?";
+		regex = "^(look|examine|x)( at)? (.*)?$";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
@@ -62,7 +62,7 @@ public class Parser {
 		}
 
 		// See if they want to clear the console
-		regex = "(clear|cls)";
+		regex = "^(clear|cls)$";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
@@ -70,7 +70,7 @@ public class Parser {
 		}
 
 		// See if they want to clear the console
-		regex = "(i|inventory|bag)";
+		regex = "^(i|inventory|bag)$";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
@@ -78,7 +78,7 @@ public class Parser {
 		}
 
 		// Determine if they're trying to pick up an item
-		regex = "(get|pick)( up)? (.*)?";
+		regex = "^(get|pick)( up)? (.*)?$";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {

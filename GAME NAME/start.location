@@ -5,6 +5,9 @@
 		"test"
 	],
 	"leading_to": {
-		"other": "other"
+		"other": {
+			"display_name": "other",
+			"player_string": "^(other|west|w)$"
+		}
 	}
 }

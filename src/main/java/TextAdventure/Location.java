@@ -22,6 +22,7 @@ public class Location {
 	private JsonValue rawJson;
 	private JsonObject raw;	
 	private List<Item> items = new ArrayList<Item>();
+	private Map<String, Pattern> leadingTo = new HashMap<String, Pattern>();
 	
 	public Location(String filename) throws IOException {
 		
@@ -43,6 +44,16 @@ public class Location {
 			String itemId = jsonItem.asString();
 			Item item = new Item(itemId);
 			this.items.add(item);
+		}
+		
+		// Get where it leads to
+		JsonObject leads = raw.get("leading_to").asObject();
+		for (Member leadObject : leads) {
+			JsonObject j = leadObject.getValue().asObject(); 
+			this.leadingTo.put(
+				j.get("display_name").asString(), 
+				Pattern.compile(j.get("player_string").asString())
+			);
 		}
 	}
 	
@@ -89,8 +100,7 @@ public class Location {
 	**/
 	public Item popItem(String userInput) {
 		for (Item item : this.items) {
-			String aliases = item.getAliases();
-			Pattern p = Pattern.compile(aliases);
+			Pattern p = item.getAliases();
 			Matcher m = p.matcher(userInput);
 			if (m.find()) {
 				this.items.remove(item);
@@ -100,18 +110,11 @@ public class Location {
 		return Item.invalid();
 	}
 
-	/**
-	 * Gets the locations which the player can move to in a map of [Name, LocationID]
-	 * Any given location ID may appear multiple times (eg w, west, and right may all lead to a single location)
-	 *
-	 * @return A map of [Name, LocationID]
-	*/
-	public Map<String, String> getMovement() {
-		Map<String, String> m = new HashMap<String, String>();
-		JsonObject movements = this.raw.get("leading_to").asObject();
-		for (Member member : movements) {
-			m.put(member.getName(), member.getValue().asString());
+	public String checkMovement(String userInput) {
+		for (Map.Entry<String, Pattern> entry : this.leadingTo.entrySet()) {
+			Matcher m = entry.getValue().matcher(userInput);
+			if (m.find()) { return entry.getKey(); }
 		}
-		return m;
+		return null;
 	}
 }

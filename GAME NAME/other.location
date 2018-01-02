@@ -4,6 +4,9 @@
 	"items": [
 	],
 	"leading_to": {
-		"start": "start"
+		"start": {
+			"display_name": "start",
+			"player_string": "^(start|east|e)$"
+		}
 	}
 }
