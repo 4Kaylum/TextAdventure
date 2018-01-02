@@ -1,6 +1,7 @@
 package TextAdventure;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 import org.fusesource.jansi.Ansi;
@@ -28,7 +29,7 @@ public class TextAdventure {
 				TextAdventure.load(gameName);
 				TextAdventure.game = new Game(TextAdventure.gamePath);
 				break;
-			} catch (Exception e) {
+			} catch (IOException e) {
 				System.out.println("That game could not be loaded.");
 			}
 		}

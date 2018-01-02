@@ -1,5 +1,6 @@
 {
 	"display_name": "test",
 	"aliases": "^(test|post)$",
-	"pickup_text": "You pick up the {{name}} and slip it into your inventory."
+	"pickup_text": "You pick up the {{name}} and slip it into your inventory.",
+	"description": "A simple test item. It breaks the fourth wall with every move, reflecting the sunlight back into your eyes, even when in complete darkness. It whispers your darkest thoughts at you, making them seem so... so enchanting...You decide to leave the {{name}} alone."
 }

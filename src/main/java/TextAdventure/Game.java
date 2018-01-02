@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.Ansi.Color;
 
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
@@ -15,6 +19,7 @@ import com.eclipsesource.json.JsonValue;
 
 public class Game {
 	private static String path;
+	public static boolean debug = false;
 	private List<Item> inventory = new ArrayList<Item>();
 	private Map<String, Location> locations = new HashMap<String, Location>();  // id, Location
 	private Location currentLocation;
@@ -32,6 +37,7 @@ public class Game {
 		this.raw = Json.parse(file);
 		file.close();
 		this.settings = raw.asObject();
+		Game.debug = this.settings.getBoolean("debug", false);
 
 		// Read all of the locations into memory
 		File[] wholeDirectory = new File(Game.path).listFiles();
@@ -56,7 +62,9 @@ public class Game {
 	 * @param p The parser object that the main thread interpreted
 	**/
 	public void run(Parser p) {
-		System.out.println("Action :::: " + p.toString());
+		if (Game.debug) {
+			System.out.println("\n" + Ansi.ansi().bg(Color.RED).fg(Color.WHITE).a(p.toString()).reset());
+		}
 		switch (p.action) {
 			case CLEAR_CONSOLE:
 				// Clear the screen
@@ -67,6 +75,34 @@ public class Game {
 				// Print out the description of the room
 				String roomDescription = this.getLocation().lookAround();
 				System.out.println(roomDescription);
+				break;
+				
+			case ITEM_EXAMINE:
+				// Examining an item is super neat
+				boolean said = false;
+				
+				// Check your inventory first
+				for (Item i : this.inventory) {
+					Matcher m = i.getAliases().matcher(p.a);
+					if (m.find()) {
+						System.out.println(i.getDescription());
+						said = true;
+						break;
+					}
+				}
+				if (said) { break; }
+				
+				// Now we check the room
+				for (Item i : this.getLocation().getAllItems()) {
+					Matcher m = i.getAliases().matcher(p.a);
+					if (m.find()) {
+						System.out.println(i.getDescription());
+						said = true;
+						break;
+					}
+				}
+				if (said) { break; }
+				System.out.println("That item doesn't seem to exist.");
 				break;
 
 			case MOVE:

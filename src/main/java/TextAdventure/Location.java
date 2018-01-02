@@ -58,6 +58,10 @@ public class Location {
 		}
 	}
 	
+	public List<Item> getAllItems() {
+		return this.items;
+	}
+	
 	/**
 	 * Gets the description of the room instance, including the items in it
 	 *

@@ -1,3 +1,4 @@
 {
-	"starting_location": "start"
+	"starting_location": "start",
+	"debug": false
 }

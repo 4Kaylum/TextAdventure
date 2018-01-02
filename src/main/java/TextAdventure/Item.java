@@ -50,5 +50,9 @@ public class Item {
 	public String getPickupText() {
 		return this.raw.get("pickup_text").asString().replaceAll("\\{\\{name\\}\\}", this.mention());
 	}
+	
+	public String getDescription() {
+		return this.raw.get("description").asString().replaceAll("\\{\\{name\\}\\}", this.display_name);
+	}
 
 }
