@@ -46,7 +46,7 @@ public class Parser {
 		}
 
 		// Determine if they're looking at the room
-		regex = "^(look|examine|x) (room|around)$";
+		regex = "^(look|examine|x)( at| around)?( room| around)?$";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
@@ -70,7 +70,7 @@ public class Parser {
 		}
 
 		// See if they want to clear the console
-		regex = "^(i|inventory|bag)$";
+		regex = "^(i|inventory|bag|inv)$";
 		r = Pattern.compile(regex);
 		m = r.matcher(toParse);
 		if (m.find()) {
