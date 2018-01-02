@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.fusesource.jansi.Ansi;
-
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
 import com.eclipsesource.json.JsonValue;
@@ -39,7 +37,7 @@ public class Game {
 		switch (p.action) {
 			case CLEAR_CONSOLE:
 				// Clear the screen
-				Ansi.ansi().eraseScreen();
+				LocalAnsi.clearScreen();
 				break;
 		
 			case ROOM_EXAMINE:

@@ -13,7 +13,7 @@ public class TextAdventure {
 	public static Game game;
 	private static Scanner in;
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		
 		// Nice output text to start with
 		System.out.println("Welcome to the Text Adventure thingy");
@@ -34,8 +34,8 @@ public class TextAdventure {
 		}
 
 		// Create a new game object
-		Ansi.ansi().eraseScreen();
-		String d = TextAdventure.game.getLocation().lookAround();
+		LocalAnsi.clearScreen();
+		String d = TextAdventure.game.getLocation().lookAround(false);
 		System.out.println(d);
 		
 		// Determine the next thing the user says
