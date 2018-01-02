@@ -43,11 +43,23 @@ public class Location {
 		}
 	}
 	
+	/**
+	 * Gets the description of the room instance, including the items in it
+	 *
+	 * @param newLine Whether or not the description has a trailing newline at the start
+	**/
 	public String lookAround(boolean newLine) {
+
+		// Get the description of the location from the file
 		String description = raw.get("description").asString();
-		if (!this.items.isEmpty()) {
+
+		// Add a list of the items available
+		if (this.items.size() > 0) {
 			description = description + "\nItems: ";
 			int counter = 0;
+
+			// Iterate through each of the items
+			// This only looks complicated since I'm deciding between a comma, period, and the word and
 			for (Item i : this.items) {
 				counter++;
 				description += i.mention();

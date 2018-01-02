@@ -50,6 +50,11 @@ public class Game {
 		this.currentLocation = this.locations.get(locationName);
 	}
 
+	/**
+	 * Runs a command from the user
+	 *
+	 * @param p The parser object that the main thread interpreted
+	**/
 	public void run(Parser p) {
 		switch (p.action) {
 			case CLEAR_CONSOLE:

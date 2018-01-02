@@ -4,5 +4,7 @@
 	"items": [
 		"test"
 	],
-	"leading_to": {}
+	"leading_to": {
+		"other": "other"
+	}
 }

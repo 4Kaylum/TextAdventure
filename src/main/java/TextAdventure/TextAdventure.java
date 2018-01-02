@@ -50,6 +50,7 @@ public class TextAdventure {
 			}
 		}
 		in.close();
+		AnsiConsole.systemUninstall();
 	}
 	
 	public static void load(String gameName) {
