@@ -76,10 +76,10 @@ public class Game {
 				String newLocationId = moves.get(p.a);
 				if (newLocationId == null) {
 					System.out.println("That location is invalid.");
-					break;
 				} else {
 					this.setLocation(newLocationId);
 				}
+				break;
 
 			case CHECK_INVENTORY:
 				// Print the content of the inventory
