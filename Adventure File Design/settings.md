@@ -8,3 +8,12 @@ The `.settings` file is read when the game is initialized, and never more. As su
 	* This should hold the ID of the location where the player starts.
 * debug (bool)
 	* This is a simple testing option that lets you see the output of the parser.
+
+## Example
+
+Filename: `.settings`
+```json
+{
+	"starting_location": "start",
+	"debug": false
+}

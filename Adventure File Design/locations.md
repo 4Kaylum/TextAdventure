@@ -22,3 +22,22 @@ Locations are all stored as `id.location` files, but are simply JSON with a diff
 	* The name of the location as it will be show in the room's description when the player looks around.
 * player_string (regex)
 	* A string of regex that the player can type in to get to the particular location you're referencing.
+
+## Example
+
+Filename: `start.location`
+```json
+{
+	"description": "It was a place, like any other.",
+	"items": [
+		"test"
+	],
+	"leading_to": {
+		"other": {
+			"display_name": "another place",
+			"player_string": "^(another place|another|other|west|w)$"
+		}
+	}
+}
+```
+Note that the inclusion of `other` in that snippet's `leading_to` dictionary means that there must be another location with the ID of `other` existing as well.
