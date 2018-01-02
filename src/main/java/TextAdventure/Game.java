@@ -38,15 +38,44 @@ public class Game {
 	public void run(Parser p) {
 		switch (p.action) {
 			case CLEAR_CONSOLE:
+				// Clear the screen
 				Ansi.ansi().eraseScreen();
 				break;
 		
 			case ROOM_EXAMINE:
+				// Print out the description of the room
 				String roomDescription = this.getLocation().lookAround();
 				System.out.println(roomDescription);
 				break;
 
+			case CHECK_INVENTORY:
+				// Print the content of the inventory
+				int counter = 0;
+				String itemString = "Items: ";
+
+				// Make sure it's not empty
+				if (this.inventory.size() == 0) {
+					System.out.println("You have no items in your inventory.");
+					break;
+				}
+
+				// It's not - populate a string
+				for (Item i : this.inventory) {
+					counter++;
+					itemString += i.mention();
+					if (counter == this.inventory.size() - 1 && this.inventory.size() != 0) {
+						itemString += ", and ";
+					} else if (counter < this.inventory.size()) {
+						itemString += ", ";
+					} else {
+						itemString += ".";
+					}
+				}
+				System.out.println(itemString);
+				break;
+
 			case GET_ITEM:
+				// Move an item from the location's inventory to the player's
 				Item item = this.getLocation().popItem(p.a);
 				if (item.display_name == null) {
 					System.out.println("That item doesn't seem to exist.");
@@ -58,6 +87,7 @@ public class Game {
 				break;
 				
 			default: 
+				// Invalid action
 				System.out.print("That action is invalid. ");
 				System.out.println(p);
 				break;

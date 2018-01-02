@@ -69,6 +69,14 @@ public class Parser {
 			return new Parser(Action.CLEAR_CONSOLE);
 		}
 
+		// See if they want to clear the console
+		regex = "(i|inventory|bag)";
+		r = Pattern.compile(regex);
+		m = r.matcher(toParse);
+		if (m.find()) {
+			return new Parser(Action.CHECK_INVENTORY);
+		}
+
 		// Determine if they're trying to pick up an item
 		regex = "(get|pick)( up)? (.*)?";
 		r = Pattern.compile(regex);
