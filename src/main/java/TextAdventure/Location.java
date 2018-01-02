@@ -3,13 +3,16 @@ package TextAdventure;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
+import com.eclipsesource.json.JsonObject.Member;
 import com.eclipsesource.json.JsonValue;
 
 public class Location {
@@ -81,6 +84,7 @@ public class Location {
 
 	/**
 	 * Gets an item from this room's items via a regex search
+	 *
 	 * @param r The name being searched for in the item's regex
 	**/
 	public Item popItem(String userInput) {
@@ -94,5 +98,20 @@ public class Location {
 			}
 		}
 		return Item.invalid();
+	}
+
+	/**
+	 * Gets the locations which the player can move to in a map of [Name, LocationID]
+	 * Any given location ID may appear multiple times (eg w, west, and right may all lead to a single location)
+	 *
+	 * @return A map of [Name, LocationID]
+	*/
+	public Map<String, String> getMovement() {
+		Map<String, String> m = new HashMap<String, String>();
+		JsonObject movements = this.raw.get("leading_to").asObject();
+		for (Member member : movements) {
+			m.put(member.getName(), member.getValue().asString());
+		}
+		return m;
 	}
 }

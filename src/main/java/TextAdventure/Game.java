@@ -56,6 +56,7 @@ public class Game {
 	 * @param p The parser object that the main thread interpreted
 	**/
 	public void run(Parser p) {
+		System.out.println("Action :::: " + p.toString());
 		switch (p.action) {
 			case CLEAR_CONSOLE:
 				// Clear the screen
@@ -67,6 +68,18 @@ public class Game {
 				String roomDescription = this.getLocation().lookAround();
 				System.out.println(roomDescription);
 				break;
+
+			case MOVE:
+				// Move the player to another room
+				Location current = this.getLocation();
+				Map<String, String> moves = current.getMovement();
+				String newLocationId = moves.get(p.a);
+				if (newLocationId == null) {
+					System.out.println("That location is invalid.");
+					break;
+				} else {
+					this.setLocation(newLocationId);
+				}
 
 			case CHECK_INVENTORY:
 				// Print the content of the inventory
@@ -118,8 +131,26 @@ public class Game {
 		return this.currentLocation;
 	}
 	
-	public Location setLocation(String newLocation) {
+	/**
+	 * Moves the player to a given location
+	 *
+	 * @param newLocation The ID of the location to be moved to
+	 * @param clearConsole Whether the console should be cleared
+	 * @param lookAround Whether you should automatically look around
+	 * @return The new location that you're moved to
+	**/
+	public Location setLocation(String newLocation, boolean clearConsole, boolean lookAround) {
 		this.currentLocation = this.locations.get(newLocation);
+		if (clearConsole) {
+			LocalAnsi.clearScreen();
+		}
+		if (lookAround) {
+			System.out.println(this.currentLocation.lookAround(false));
+		}
 		return this.getLocation();
+	}
+	
+	public Location setLocation(String newLocation) {
+		return this.setLocation(newLocation, true, true);
 	}
 }
