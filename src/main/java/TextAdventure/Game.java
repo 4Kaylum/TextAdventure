@@ -1,9 +1,13 @@
 package TextAdventure;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
 
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonObject;
@@ -12,7 +16,8 @@ import com.eclipsesource.json.JsonValue;
 public class Game {
 	private static String path;
 	private List<Item> inventory = new ArrayList<Item>();
-	private Location location;
+	private Map<String, Location> locations = new HashMap<String, Location>();  // id, Location
+	private Location currentLocation;
 	private JsonValue raw;
 	private JsonObject settings;
 	
@@ -27,10 +32,22 @@ public class Game {
 		this.raw = Json.parse(file);
 		file.close();
 		this.settings = raw.asObject();
+
+		// Read all of the locations into memory
+		File[] wholeDirectory = new File(Game.path).listFiles();
+		for (File directoryFile : wholeDirectory) {
+			if (directoryFile.toString().endsWith(".location")) {
+				String filename = directoryFile.toString();  // Get the path name
+				String[] split = filename.split(Pattern.quote(File.separator));  // Split the path by slash
+				String locationNameWithEnding = split[split.length-1];  // Get the filename
+				String locationName = locationNameWithEnding.split("\\.")[0];  // Get the filename without extension
+				this.locations.put(locationName, new Location(locationName));  // Add location to memory
+			}
+		}
 		
 		// Work out where we're starting
 		String locationName = this.settings.get("starting_location").asString();
-		this.location = new Location(locationName);
+		this.currentLocation = this.locations.get(locationName);
 	}
 
 	public void run(Parser p) {
@@ -93,16 +110,11 @@ public class Game {
 	}
 	
 	public Location getLocation() {
-		return this.location;
+		return this.currentLocation;
 	}
 	
-	public Location setLocation(Location newLocation) {
-		this.location = newLocation;
+	public Location setLocation(String newLocation) {
+		this.currentLocation = this.locations.get(newLocation);
 		return this.getLocation();
-	}
-	
-	public void getItem(String itemId) throws IOException {
-		Item item = new Item(Game.path + itemId);
-		this.inventory.add(item);
 	}
 }
